@@ -2,7 +2,7 @@
 
 - name: set repo of jenkins
   get_url:
-    url: {{ jenkins_repo }}
+    url: "{{ jenkins_repo }}""
     dest: /etc/yum.repos.d/jenkins.repo
     owner: root
     group: root
@@ -22,7 +22,7 @@
 - name: set firewalld of jenkins
   firewalld:
       state: enabled  
-      port: {{ jenkins_port }}
+      port: "{{ jenkins_port }}""
       permanent: ture
       zone: public
       service: jenkins
