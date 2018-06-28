@@ -1,0 +1,7 @@
+---
+- name: jenkins role
+  hosts: develop
+  remote_user: ansible
+  sudo: yes
+  roles:
+    - jenkins

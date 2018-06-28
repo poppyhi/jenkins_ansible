@@ -1,0 +1,29 @@
+---
+
+- name: set repo of jenkins
+  get_url:
+    url: {{ jenkins_repo }}
+    dest: /etc/yum.repos.d/jenkins.repo
+    owner: root
+    group: root
+    mode: 0644
+
+- name: install jenkins
+  yum:
+    name: jenkins 
+    state: latest
+
+- name: start jenkins
+  service:
+    name: jenkins
+    enabled: yes
+    state: started
+
+- name: set firewalld of jenkins
+  firewalld:
+      state: enabled  
+      port: {{ jenkins_port }}
+      permanent: ture
+      zone: public
+      service: jenkins
+  notify: restart firewalld
