@@ -8,6 +8,11 @@
     group: root
     mode: 0644
 
+- name: import key of jenkins
+  rpm_key:
+      key: "{{ jenkins_key }}"
+      state: absent
+
 - name: install jenkins
   yum:
     name: jenkins 
