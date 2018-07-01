@@ -11,7 +11,7 @@
 - name: import key of jenkins
   rpm_key:
       key: "{{ jenkins_key }}"
-      state: absent
+      state: present
 
 - name: install jenkins
   yum:
