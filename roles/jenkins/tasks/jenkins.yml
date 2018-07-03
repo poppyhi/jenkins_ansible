@@ -34,6 +34,4 @@
       state: enabled  
       port: "{{ jenkins_port }}"
       permanent: true
-      zone: public
-      service: jenkins
   notify: restart firewalld
