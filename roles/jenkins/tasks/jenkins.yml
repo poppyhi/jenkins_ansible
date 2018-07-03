@@ -13,6 +13,11 @@
       key: "{{ jenkins_key }}"
       state: present
 
+- name: install java
+  yum:
+      name: java
+      state: latest
+ 
 - name: install jenkins
   yum:
     name: jenkins 
