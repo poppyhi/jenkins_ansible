@@ -34,4 +34,4 @@
       state: enabled  
       port: "{{ jenkins_port }}"
       permanent: true
-  notify: restart firewalld
+      immediate: true
